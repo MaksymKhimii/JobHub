@@ -1,0 +1,97 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>ua.khimii</groupId>
+  <artifactId>JobHub</artifactId>
+  <packaging>war</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>JobHub Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+
+  <build>
+    <finalName>JobHub</finalName>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <configuration>
+            <source>1.7</source>
+            <target>1.7</target>
+            <showWarnings>true</showWarnings>
+            <showDeprecation>true</showDeprecation>
+            <debug>true</debug>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-war-plugin</artifactId>
+          <version>2.6</version>
+          <configuration>
+            <warSourceDirectory>src/main/webapp</warSourceDirectory>
+            <failOnMissingWebXml>false</failOnMissingWebXml>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <version>1.8</version>
+        <executions>
+          <!-- clean -->
+          <execution>
+            <id>clean-lib</id>
+            <phase>clean</phase>
+            <configuration>
+              <tasks>
+                <delete dir="${basedir}/src/main/webapp/WEB-INF/lib" />
+              </tasks>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+          <!-- build -->
+          <execution>
+            <id>copy-lib</id>
+            <phase>package</phase>
+            <configuration>
+              <tasks>
+                <delete dir="${basedir}/src/main/webapp/WEB-INF/lib" />
+                <copy todir="${basedir}/src/main/webapp/WEB-INF/lib">
+                  <fileset
+                          dir="${basedir}/target/${project.build.finalName}/WEB-INF/lib" />
+                </copy>
+              </tasks>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+  <dependencies>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>4.0.1</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+      <version>1.2.17</version>
+    </dependency>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>jstl</artifactId>
+      <version>1.2</version>
+    </dependency>
+  </dependencies>
+
+</project>
