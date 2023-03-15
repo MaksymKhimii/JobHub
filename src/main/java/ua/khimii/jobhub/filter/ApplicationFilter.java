@@ -16,15 +16,16 @@ import java.io.IOException;
 @WebFilter("/*")
 public class ApplicationFilter implements Filter {
     private static final org.apache.log4j.Logger LOGGER = Logger.getLogger(SearchController.class.getName());
+
     public void init(FilterConfig filterConfig) {
 
     }
 
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         HttpServletRequest req = (HttpServletRequest) request;
-      //  LOGGER.debug("Before URL processing: {}", req.getRequestURI());
+        LOGGER.debug("Before URL processing: {} " + req.getRequestURI());
         chain.doFilter(req, response);
-        //LOGGER.debug("After URL processing: {}", req.getRequestURI());
+        LOGGER.debug("After URL processing: {} " + req.getRequestURI());
     }
 
     public void destroy() {

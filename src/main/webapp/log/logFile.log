@@ -3,3 +3,24 @@
 2023-03-12 21:30:04 DEBUG SearchController:23 - doGet search
 2023-03-12 21:30:08 DEBUG SearchController:33 - doPost search: {}
 2023-03-12 21:30:10 DEBUG SearchController:23 - doGet search
+2023-03-12 21:47:56 DEBUG SearchController:26 - Before URL processing: {} /
+2023-03-12 21:47:56 DEBUG SearchController:28 - After URL processing: {} /
+2023-03-12 21:47:56 DEBUG SearchController:26 - Before URL processing: {} /search
+2023-03-12 21:47:56 DEBUG SearchController:23 - doGet search
+2023-03-12 21:47:57 DEBUG SearchController:28 - After URL processing: {} /search
+2023-03-12 21:47:57 DEBUG SearchController:26 - Before URL processing: {} /
+2023-03-12 21:47:57 DEBUG SearchController:28 - After URL processing: {} /
+2023-03-12 21:47:57 DEBUG SearchController:26 - Before URL processing: {} /search
+2023-03-12 21:47:57 DEBUG SearchController:23 - doGet search
+2023-03-12 21:47:57 DEBUG SearchController:28 - After URL processing: {} /search
+2023-03-12 21:47:57 DEBUG SearchController:26 - Before URL processing: {} /
+2023-03-12 21:47:57 DEBUG SearchController:28 - After URL processing: {} /
+2023-03-12 21:47:57 DEBUG SearchController:26 - Before URL processing: {} /search
+2023-03-12 21:47:57 DEBUG SearchController:23 - doGet search
+2023-03-12 21:47:57 DEBUG SearchController:28 - After URL processing: {} /search
+2023-03-12 21:47:59 DEBUG SearchController:26 - Before URL processing: {} /search
+2023-03-12 21:47:59 DEBUG SearchController:33 - doPost search: {}
+2023-03-12 21:47:59 DEBUG SearchController:28 - After URL processing: {} /search
+2023-03-12 21:48:01 DEBUG SearchController:26 - Before URL processing: {} /search
+2023-03-12 21:48:01 DEBUG SearchController:23 - doGet search
+2023-03-12 21:48:01 DEBUG SearchController:28 - After URL processing: {} /search
