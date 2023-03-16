@@ -1,0 +1,6 @@
+<sitemesh xmlns="http://sitemesh.org/xml/config">
+    <mapping>
+        <path>/*</path>
+        <decorator>/WEB-INF/template/page-template.jsp</decorator>
+    </mapping>
+</sitemesh>

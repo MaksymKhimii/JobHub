@@ -1,7 +1,6 @@
 package ua.khimii.jobhub.filter;
 
 import org.apache.log4j.Logger;
-import ua.khimii.jobhub.controller.SearchController;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -15,7 +14,7 @@ import java.io.IOException;
 
 @WebFilter("/*")
 public class ApplicationFilter implements Filter {
-    private static final org.apache.log4j.Logger LOGGER = Logger.getLogger(SearchController.class.getName());
+    private static final org.apache.log4j.Logger LOGGER = Logger.getLogger(ApplicationFilter.class.getName());
 
     public void init(FilterConfig filterConfig) {
 
