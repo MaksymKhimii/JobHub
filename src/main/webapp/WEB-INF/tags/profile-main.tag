@@ -3,7 +3,7 @@
 <div class="panel panel-primary">
     <a href="/edit"><img class="img-responsive photo" src="/media/avatar/1b8dd1be-214b-4696-a194-57f8e03d9020.jpg" alt="photo"></a>
     <h1 class="text-center">
-        <a style="color: black;" href="/edit">${name != null ? name : 'Richard Hendricks' }</a>
+        <a style="color: black;" href="/edit">${fullName}</a>
     </h1>
     <h6 class="text-center">
         <strong>Odessa, Ukraine</strong>
