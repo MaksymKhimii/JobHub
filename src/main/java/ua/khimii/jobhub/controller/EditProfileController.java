@@ -22,6 +22,7 @@ public class EditProfileController {
     @RequestMapping(value="/edit/skills", method=RequestMethod.GET)
     public String getEditSkills(Model model){
         model.addAttribute("skillCategories", skillCategoryRepository.findAll());
+        System.out.println(skillCategoryRepository.findAll());
         return "edit-skills";
     }
 }
