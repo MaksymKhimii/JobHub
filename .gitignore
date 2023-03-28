@@ -1,2 +1,6 @@
 # Project exclude paths
-/target/
+target/
+src/main/webapp/log/
+.idea/
+node_modules/
+.gitignore
