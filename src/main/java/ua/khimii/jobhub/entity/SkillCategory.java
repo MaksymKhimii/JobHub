@@ -8,7 +8,6 @@ import javax.persistence.Table;
 @Entity
 @Table(name="skill_category")
 public class SkillCategory extends AbstractEntity<Long>{
-    private static final long serialVersionUID = -8959739023562086833L;
 
     @Id
     @Column

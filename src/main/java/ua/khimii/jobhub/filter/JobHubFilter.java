@@ -28,11 +28,11 @@ public class JobHubFilter extends AbstractFilter {
     }
 
     private void handleException(Throwable th, String requestUrl, HttpServletResponse resp) throws ServletException, IOException {
-        if (production) {
+        if(production) {
             if ("/error".equals(requestUrl)) {
                 throw new ServletException(th);
             } else {
-                resp.sendRedirect("/error?url=" + requestUrl);
+                resp.sendRedirect("/error?url="+requestUrl);
             }
         } else {
             throw new ServletException(th);

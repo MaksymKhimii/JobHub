@@ -7,23 +7,28 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import ua.khimii.jobhub.entity.Profile;
+import ua.khimii.jobhub.repository.ProfileRepository;
 import ua.khimii.jobhub.service.NameService;
 
 @Controller
 public class PublicDataController {
 
     @Autowired
-    private NameService nameService;
+    private ProfileRepository profileRepository;
 
-    @RequestMapping(value = "/{uid}", method = RequestMethod.GET)
-    public String getProfile(@PathVariable("uid") String uid, Model model) {
-        String fullName = nameService.convertName(uid);
-        model.addAttribute("fullName", fullName);
+    @RequestMapping(value="/{uid}", method=RequestMethod.GET)
+    public String getProfile(@PathVariable("uid") String uid, Model model){
+        Profile profile = profileRepository.findByUid(uid);
+        if(profile == null) {
+            return "profile_not_found";
+        }
+        model.addAttribute("profile", profile);
         return "profile";
     }
 
-    @RequestMapping(value = "/error", method = RequestMethod.GET)
-    public String getError() {
+    @RequestMapping(value="/error", method=RequestMethod.GET)
+    public String getError(){
         return "error";
     }
 }
