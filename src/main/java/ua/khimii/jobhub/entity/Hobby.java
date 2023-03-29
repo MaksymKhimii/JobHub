@@ -16,7 +16,7 @@ import javax.persistence.Transient;
 
 @Entity
 @Table(name="hobby")
-public class Hobby extends AbstractEntity<Long> implements Serializable, Comparable<Hobby> {
+public class Hobby extends AbstractEntity<Long> implements Serializable, Comparable<Hobby>, ProfileEntity {
 
     @Id
     @SequenceGenerator(name="HOBBY_ID_GENERATOR", sequenceName="HOBBY_SEQ", allocationSize=1)

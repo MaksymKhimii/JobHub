@@ -193,7 +193,7 @@ public class Profile extends AbstractEntity<Long> implements Serializable {
 
     public void setCertificates(List<Certificate> certificates) {
         this.certificates = certificates;
-        updateListSetProfile((List<? extends ProfileEntity>) this.certificates);
+        updateListSetProfile(this.certificates);
     }
 
     public List<Education> getEducations() {
@@ -202,7 +202,7 @@ public class Profile extends AbstractEntity<Long> implements Serializable {
 
     public void setEducations(List<Education> educations) {
         this.educations = educations;
-        updateListSetProfile((List<? extends ProfileEntity>) this.educations);
+        updateListSetProfile(this.educations);
     }
 
     public List<Hobby> getHobbies() {
@@ -211,7 +211,7 @@ public class Profile extends AbstractEntity<Long> implements Serializable {
 
     public void setHobbies(List<Hobby> hobbies) {
         this.hobbies = hobbies;
-        updateListSetProfile((List<? extends ProfileEntity>) this.hobbies);
+        updateListSetProfile(this.hobbies);
     }
 
     public List<Language> getLanguages() {
@@ -220,7 +220,7 @@ public class Profile extends AbstractEntity<Long> implements Serializable {
 
     public void setLanguages(List<Language> languages) {
         this.languages = languages;
-        updateListSetProfile((List<? extends ProfileEntity>) this.languages);
+        updateListSetProfile(this.languages);
     }
 
     public List<Practic> getPractics() {
@@ -229,7 +229,7 @@ public class Profile extends AbstractEntity<Long> implements Serializable {
 
     public void setPractics(List<Practic> practics) {
         this.practics = practics;
-        updateListSetProfile((List<? extends ProfileEntity>) this.practics);
+        updateListSetProfile(this.practics);
     }
 
     public List<Skill> getSkills() {
@@ -247,7 +247,7 @@ public class Profile extends AbstractEntity<Long> implements Serializable {
 
     public void setCourses(List<Course> courses) {
         this.courses = courses;
-        updateListSetProfile((List<? extends ProfileEntity>) this.courses);
+        updateListSetProfile(this.courses);
     }
 
     public String getLargePhoto() {
@@ -312,16 +312,16 @@ public class Profile extends AbstractEntity<Long> implements Serializable {
     }
 
     @Transient
-    public int getAge() {
-        LocalDate birthdate = new LocalDate(birthDay);
+    public int getAge(){
+        LocalDate birthdate = new LocalDate (birthDay);
         LocalDate now = new LocalDate();
         Years age = Years.yearsBetween(birthdate, now);
         return age.getYears();
     }
 
     @Transient
-    public String getProfilePhoto() {
-        if (largePhoto != null) {
+    public String getProfilePhoto(){
+        if(largePhoto != null) {
             return largePhoto;
         } else {
             return "/static/img/profile-placeholder.png";
@@ -345,7 +345,7 @@ public class Profile extends AbstractEntity<Long> implements Serializable {
 
     // https://hibernate.atlassian.net/browse/HHH-7610
     public Contacts getContacts() {
-        if (contacts == null) {
+        if(contacts == null) {
             contacts = new Contacts();
         }
         return contacts;

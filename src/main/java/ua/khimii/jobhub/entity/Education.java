@@ -17,7 +17,7 @@ import javax.persistence.Transient;
 
 @Entity
 @Table(name="education")
-public class Education extends AbstractEntity<Long> implements Serializable {
+public class Education extends AbstractEntity<Long> implements Serializable, ProfileEntity {
 
     @Id
     @SequenceGenerator(name="EDUCATION_ID_GENERATOR", sequenceName="EDUCATION_SEQ", allocationSize=1)

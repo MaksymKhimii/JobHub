@@ -15,7 +15,7 @@ import java.io.Serializable;
 
 @Entity
 @Table(name="certificate")
-public class Certificate extends AbstractEntity<Long> implements Serializable {
+public class Certificate extends AbstractEntity<Long> implements Serializable, ProfileEntity {
 
     @Id
     @SequenceGenerator(name="CERTIFICATE_ID_GENERATOR", sequenceName="CERTIFICATE_SEQ", allocationSize=1)

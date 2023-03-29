@@ -15,7 +15,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "course")
-public class Course extends AbstractFinishDateEntity<Long> implements Serializable {
+public class Course extends AbstractFinishDateEntity<Long> implements Serializable, ProfileEntity {
 
     @Id
     @SequenceGenerator(name = "COURSE_ID_GENERATOR", sequenceName = "COURSE_SEQ", allocationSize = 1)

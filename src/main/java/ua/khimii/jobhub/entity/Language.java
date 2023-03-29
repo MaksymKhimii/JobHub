@@ -20,7 +20,7 @@ import javax.persistence.Transient;
 
 @Entity
 @Table(name="language")
-public class Language extends AbstractEntity<Long> implements Serializable {
+public class Language extends AbstractEntity<Long> implements Serializable, ProfileEntity {
 
     @Id
     @SequenceGenerator(name="LANGUAGE_ID_GENERATOR", sequenceName="LANGUAGE_SEQ", allocationSize=1)

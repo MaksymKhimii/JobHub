@@ -19,7 +19,7 @@ import org.joda.time.DateTime;
 
 @Entity
 @Table(name = "practic")
-public class Practic extends AbstractFinishDateEntity<Long> implements Serializable {
+public class Practic extends AbstractFinishDateEntity<Long> implements Serializable, ProfileEntity {
 
     @Id
     @SequenceGenerator(name = "PRACTIC_ID_GENERATOR", sequenceName = "PRACTIC_SEQ", allocationSize = 1)
