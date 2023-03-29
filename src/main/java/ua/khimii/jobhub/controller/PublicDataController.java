@@ -1,25 +1,23 @@
 package ua.khimii.jobhub.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cglib.core.Local;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import ua.khimii.jobhub.entity.Profile;
-import ua.khimii.jobhub.repository.ProfileRepository;
-import ua.khimii.jobhub.service.NameService;
+import ua.khimii.jobhub.service.FindProfileService;
 
 @Controller
 public class PublicDataController {
 
     @Autowired
-    private ProfileRepository profileRepository;
+    private FindProfileService findProfileService;
 
     @RequestMapping(value="/{uid}", method=RequestMethod.GET)
     public String getProfile(@PathVariable("uid") String uid, Model model){
-        Profile profile = profileRepository.findByUid(uid);
+        Profile profile = findProfileService.findByUid(uid);
         if(profile == null) {
             return "profile_not_found";
         }
