@@ -1,5 +1,7 @@
 package ua.khimii.jobhub.entity;
 
+import ua.khimii.jobhub.annotation.constraints.EnglishLanguage;
+
 import java.io.Serializable;
 
 import javax.persistence.Column;
@@ -12,6 +14,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name="skill")
@@ -23,9 +26,13 @@ public class Skill extends AbstractEntity<Long> implements Serializable, Profile
     private Long id;
 
     @Column(nullable=false, length=50)
+    @EnglishLanguage
+    @Size(min=1)
     private String category;
 
     @Column(nullable=false, length=2147483647)
+    @EnglishLanguage
+    @Size(min=1)
     private String value;
 
     //bi-directional many-to-one association to Profile

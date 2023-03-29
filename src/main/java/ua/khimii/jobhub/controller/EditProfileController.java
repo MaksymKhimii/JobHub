@@ -13,6 +13,8 @@ import ua.khimii.jobhub.form.SkillForm;
 import ua.khimii.jobhub.repository.ProfileRepository;
 import ua.khimii.jobhub.repository.SkillCategoryRepository;
 
+import javax.validation.Valid;
+
 @Controller
 public class EditProfileController {
 
@@ -37,7 +39,7 @@ public class EditProfileController {
     }
 
     @RequestMapping(value = "/edit/skills", method = RequestMethod.POST)
-    public String saveEditTechSkills(@ModelAttribute("skillForm") SkillForm form, BindingResult bindingResult, Model model) {
+    public String saveEditTechSkills(@Valid @ModelAttribute("skillForm") SkillForm form, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
             return gotoSkillsJSP(model);
         }

@@ -18,9 +18,12 @@ import javax.persistence.OrderBy;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import org.joda.time.LocalDate;
 import org.joda.time.Years;
+import ua.khimii.jobhub.annotation.constraints.Adulthood;
 
 @Entity
 @Table(name = "profile")
